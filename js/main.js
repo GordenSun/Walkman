@@ -250,11 +250,12 @@ function doAction(action, e) {
       beginHoldSeek(action === 'ff' ? 1 : -1);
       break;
     case 'eject':
-    case 'door':
       toggleTape();
       break;
     case 'cassette':
+      // 点击磁带盘：出仓状态装回；停止状态直接弹出
       if (!walkman.tapeIn) toggleTape();
+      else if (!audio.playing && audio.seekDir === 0) toggleTape();
       break;
     case 'knob':
       knobDrag = { y: e.clientY, v: audio.volume };
