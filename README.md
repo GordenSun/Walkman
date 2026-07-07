@@ -6,7 +6,9 @@
 
 ## 在线体验
 
-推送到 GitHub 后由 Actions 自动发布至 GitHub Pages（见下文）。
+**https://gordensun.github.io/Walkman/**
+
+仓库：https://github.com/GordenSun/Walkman （MIT 开源）
 
 ## 操作方式
 
@@ -51,14 +53,14 @@ git init -b main
 git add -A
 git commit -m "init"
 # 使用 GitHub CLI 一键建仓并推送（仓库需为 Public）
-gh repo create walkman-3d --public --source=. --push
+gh repo create Walkman --public --source=. --push
 ```
 
 推送后 Actions 会自动：
 
 1. 扫描 `music/` 生成播放列表；
 2. 启用 GitHub Pages（首次运行自动开启，无需去设置页手动配置）；
-3. 部署站点到 `https://<你的用户名>.github.io/walkman-3d/`。
+3. 部署站点到 `https://<你的用户名>.github.io/Walkman/`。
 
 之后每次向 `main` 推送（比如往 `music/` 里加歌）都会自动重新发布。
 
@@ -88,3 +90,7 @@ gh repo create walkman-3d --public --source=. --push
 ├── tools/build-playlist.mjs
 └── .github/workflows/deploy.yml
 ```
+
+## License
+
+[MIT](./LICENSE)
